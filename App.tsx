@@ -1,18 +1,33 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import AppLoading from 'expo-app-loading';
+import { ThemeProvider } from 'styled-components';
+import { Text } from 'react-native';
+
+import {
+  useFonts,
+  Poppins_400Regular,
+  Poppins_500Medium,
+  Poppins_700Bold,
+  
+} from '@expo-google-fonts/poppins';
+
+import theme from './src/global/styles/theme'
+import { StartScreen } from './src/screens/StartScreen';
+
 
 export default function App() {
-  return (
-      <Text>Oi</Text>
-  );
-}
+  const [fontsLoaded] = useFonts({
+    Poppins_400Regular,
+    Poppins_500Medium,
+    Poppins_700Bold
+  })
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  if (!fontsLoaded) {
+    return <AppLoading />
+  }
+  return (
+    <ThemeProvider theme={theme}>
+      <StartScreen></StartScreen>
+    </ThemeProvider>
+  )
+}
