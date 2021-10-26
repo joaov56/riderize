@@ -3,9 +3,12 @@
     "name": "rideirze-test",
     "slug": "rideirze-test",
     "version": "1.0.0",
+    "plugins": ["@react-native-mapbox-gl/maps"],
     "assetBundlePatterns": [
       "**/*"
     ]
   },
   "name": "rideirze-test"
+
+
 }

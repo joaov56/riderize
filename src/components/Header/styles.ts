@@ -4,7 +4,7 @@ import { AntDesign } from '@expo/vector-icons';
 
 
 export const Container = styled.SafeAreaView`
-    height: 15%;
+    height: 12%;
     background-color: white;
     align-items: center;
     flex-direction: row;
